@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Список фильмов</h2>
+    <div class="list-group mt-3">
+        {% for film in films %}
+        <a href="#" class="list-group-item list-group-item-action">
+            <h5>{{ film.title }}</h5>
+            <p>{{ film.description }}</p>
+            <small>{{ film.review }}</small>
+        </a>
+        {% empty %}
+        <p>Нет доступных фильмов.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
